@@ -10,10 +10,13 @@
       font-family: Arial, sans-serif;
       margin-top: 100px;
       background-color: #ffe6e6;
+      overflow: hidden;
     }
+
     h1 {
       font-size: 2.5em;
     }
+
     button {
       padding: 15px 30px;
       font-size: 18px;
@@ -22,14 +25,20 @@
       border: none;
       border-radius: 10px;
     }
+
     #yesBtn {
       background-color: #4CAF50;
       color: white;
     }
+
     #noBtn {
       background-color: #f44336;
       color: white;
       position: absolute;
+    }
+
+    img {
+      border-radius: 15px;
     }
   </style>
 </head>
@@ -38,8 +47,8 @@
 
   <h1>Can we have a date soon? 💖</h1>
 
-  <!-- ✅ Your downloaded GIF -->
-  <img src="cute.gif" width="300">
+  <!-- GIF -->
+  <img id="mainGif" src="cute.gif" width="300">
 
   <br><br>
 
@@ -50,7 +59,18 @@
 
   <script>
     function yesClicked() {
-      document.getElementById("response").innerHTML = "Yay! I’ll plan something special 😊";
+      document.getElementById("response").innerHTML =
+        "Yay! I’ll plan something special 😊";
+
+      // change GIF to happy one
+      document.getElementById("mainGif").src = "happy.gif";
+
+      // optional: change background color
+      document.body.style.backgroundColor = "#d4ffd4";
+
+      // optional: hide buttons
+      document.getElementById("yesBtn").style.display = "none";
+      document.getElementById("noBtn").style.display = "none";
     }
 
     function moveNo() {
